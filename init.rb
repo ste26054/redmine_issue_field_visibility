@@ -1,6 +1,4 @@
-#encoding: utf-8
-
-require_dependency 'redmine_issue_field_visibility'
+require 'redmine_issue_field_visibility'
 
 Redmine::Plugin.register :redmine_issue_field_visibility do
   name 'Redmine Issue Field Visibility Plugin'
@@ -17,8 +15,3 @@ Redmine::Plugin.register :redmine_issue_field_visibility do
 
   settings partial: 'settings/redmine_issue_field_visibility', default: {}
 end
-
-Rails.configuration.to_prepare do
-  RedmineIssueFieldVisibility.setup
-end
-

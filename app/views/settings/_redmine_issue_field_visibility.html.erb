@@ -13,7 +13,7 @@
 <% if @roles.any? %>
 
   <p style="padding-left: 0;"><%= l :issue_field_visibility_info %></p>
-
+  <div class="autoscroll">
   <table class="list issue-visibilities">
     <thead>
       <tr>
@@ -42,6 +42,7 @@
       <% end %>
     </tbody>
   </table>
+  </div>
 
 <% else %>
   <p>Set up some roles before using this plugin.</p>
