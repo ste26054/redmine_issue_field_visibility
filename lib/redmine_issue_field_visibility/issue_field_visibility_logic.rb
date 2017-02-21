@@ -4,14 +4,6 @@ module RedmineIssueFieldVisibility
   # parent_issue_id doesn't make much sense
   HIDEABLE_CORE_FIELDS = (Tracker::CORE_FIELDS + ['total_estimated_hours'] - ['done_ratio', 'parent_issue_id']).uniq
 
-  # def self.setup
-  #   QueriesHelperPatch.apply
-  #   IssuesHelperPatch.apply
-  #   IssuePatch.apply
-  #   IssueQueryPatch.apply
-  #   JournalPatch.apply
-  # end
-
   def self.hidden_core_fields(user = User.current, project = nil)
     return [] if user.admin?
     if fields_by_role = Setting.plugin_redmine_issue_field_visibility['hiddenfields']
